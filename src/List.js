@@ -6,7 +6,11 @@ const List = ({ match }) => (
   <div>
     <h2>List</h2>
     {Object.values(exampleData).map(mk => {
-      return <Link to={`/home?id=${mk.id}`}>{mk.name}</Link>;
+      return (
+        <div key={mk.id}>
+          <Link to={`/home?id=${mk.id}`}>{mk.name}</Link>
+        </div>
+      );
     })}
   </div>
 );
