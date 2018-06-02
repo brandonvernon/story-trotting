@@ -24,71 +24,71 @@ class Submission extends Component {
       <div className='container'>
         <form className='form' onSubmit={this.handleSubmit}>
           <div className='row'>
-            <label>
+            <label className='col'>
               Headline
               <input type="text" value={this.state.name} onChange={this.handleChange} />
             </label>
-            <label>
+            <label className='col'>
               Description
               <input type="text" value={this.state.description} onChange={this.handleChange} />
             </label>
           </div>
           <div className='row'>
-            <label>
+            <label className='col'>
               Location Name
               <input type="text" value={this.state.location_name} onChange={this.handleChange} />
             </label>
-            <label>
+            <label className='col'>
               Address
               <input type="text" value={this.state.address} onChange={this.handleChange} />
             </label>
           </div>
           <div className='row'>
-            <label>
+            <label className='col'>
               Latitude
               <input type="text" value={this.state.lat} onChange={this.handleChange} />
             </label>
-            <label>
+            <label className='col'>
               Longitude
               <input type="text" value={this.state.long} onChange={this.handleChange} />
             </label>
           </div>
           <div className='row'>
-            <label>
+            <label className='col'>
               Drop Pin
               <input type="text" value={this.state.drop_pin} onChange={this.handleChange} />
             </label>
-            <label>
+            <label className='col'>
               Tags
               <input type="text" value={this.state.tags} onChange={this.handleChange} />
             </label>
           </div>
           <div className='row'>
-            <label>
+            <label className='col'>
               Collection
               <input type="text" value={this.state.collection} onChange={this.handleChange} />
             </label>
-            <label>
+            <label className='col'>
               Time
               <input type="text" value={this.state.timestamp} onChange={this.handleChange} />
             </label>
           </div>
           <div className='row'>
-            <label>
+            <label className='col'>
               Time End
               <input type="text" value={this.state.timestamp_end} onChange={this.handleChange} />
             </label>
-            <label>
+            <label className='col'>
               Current Time
               <input type="text" value={this.state.timestamp_created} onChange={this.handleChange} />
             </label>
           </div>
           <div className='row'>
-            <label>
+            <label className='col'>
               Sources
               <input type="text" value={this.state.sources} onChange={this.handleChange} />
             </label>
-            <label>
+            <label className='col'>
               Your Name
               <input type="text" value={this.state.owner} onChange={this.handleChange} />
             </label>

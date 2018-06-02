@@ -1,5 +1,5 @@
 .container {
-  display: block;
+
 }
 
 .form {
@@ -7,9 +7,9 @@
 }
 
 .row {
-  text-align: left;
+
 }
 
-label {
+.col {
   padding-right: 10px;
 }
