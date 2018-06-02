@@ -10,6 +10,7 @@ import {
   InfoWindow
 } from "react-google-maps";
 import queryString from "query-string";
+import { Link } from "react-router-dom";
 
 class MyGoogleMap extends React.PureComponent {
   state = {
@@ -36,8 +37,8 @@ class MyGoogleMap extends React.PureComponent {
       <GoogleMap
         defaultZoom={12}
         defaultCenter={{
-          lat: lat || defaultPoint.lat,
-          lng: lng || defaultPoint.lng
+          lat: lat ? Number(lat) : defaultPoint.lat,
+          lng: lng ? Number(lng) : defaultPoint.lng
         }}
       >
         {Object.values(exampleData).map(mk => (
@@ -49,7 +50,9 @@ class MyGoogleMap extends React.PureComponent {
             {this.state.isOpen && mk.id === selectedPoint.id ? (
               <InfoWindow onClick={() => this.onToggleOpen({ isOpen: false })}>
                 <div>
-                  <h1>{mk.name}</h1>
+                  <Link to={`/detail${props.location.search}`}>
+                    <h1>{mk.name}</h1>
+                  </Link>
                   <div>{mk.description}</div>
                   selected collections: {collections}
                 </div>

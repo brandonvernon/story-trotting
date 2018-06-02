@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import App from "./App";
 import List from "./List";
 import Detail from "./Detail";
@@ -16,12 +16,6 @@ const BasicExample = () => (
       <Route path="/detail" component={Detail} />
     </div>
   </Router>
-);
-
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
 );
 
 export default BasicExample;
