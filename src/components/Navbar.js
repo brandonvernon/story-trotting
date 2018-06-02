@@ -53,9 +53,9 @@ class NavbarHeader extends Component {
       </Navbar.Form>
         <Navbar collapseOnSelect fixedBottom>
           <Nav>
-            <NavItem eventKey={1} href="#">
-              List View
-            </NavItem>
+            <NavItem eventKey={1}>
+               <Link to="/list">List View</Link>
+             </NavItem>
             <NavItem eventKey={1} href="#">
               Filters
             </NavItem>
