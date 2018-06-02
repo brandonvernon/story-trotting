@@ -3,12 +3,16 @@ import exampleData from "./exampleData";
 import { Link } from "react-router-dom";
 import queryString from "query-string";
 
-const Detail = ({ match }) => (
-  <div>
-    <h2>Detail</h2>
+const Detail = ({ match, location }) => {
+  const { id } = queryString.parse(location.search);
+  const selectedPoint = exampleData[id];
+  return (
+    <div>
+      <h2>{selectedPoint.name}</h2>
 
-    <div>exampleData</div>
-  </div>
-);
+      <pre>{JSON.stringify(selectedPoint, null, 2)}</pre>
+    </div>
+  );
+};
 
 export default Detail;
