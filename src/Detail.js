@@ -1,11 +1,10 @@
 import React from "react";
-import exampleData from "./exampleData";
 import { Link } from "react-router-dom";
 import queryString from "query-string";
 
-const Detail = ({ match, location }) => {
+const Detail = ({ match, location, searchData }) => {
   const { id } = queryString.parse(location.search);
-  const selectedPoint = exampleData[id];
+  const selectedPoint = searchData[id];
   return (
     <div>
       <h2>{selectedPoint.name}</h2>
