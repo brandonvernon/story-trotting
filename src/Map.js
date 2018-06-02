@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import exampleData from "./exampleData";
+import exampleData, { defaultPoint } from "./exampleData";
 import { compose, withStateHandlers } from "recompose";
 import { withRouter } from "react-router-dom";
 import {
@@ -9,7 +9,7 @@ import {
   Marker,
   InfoWindow
 } from "react-google-maps";
-const queryString = require("query-string");
+import queryString from "query-string";
 
 class MyGoogleMap extends React.PureComponent {
   state = {
@@ -17,7 +17,10 @@ class MyGoogleMap extends React.PureComponent {
   };
   onClick = ({ selected }) => {
     this.onToggleOpen({ isOpen: true });
-    this.props.history.push(`?${queryString.stringify({ id: selected })}`);
+    const query = queryString.parse(this.props.location.search);
+    this.props.history.push(
+      `?${queryString.stringify({ ...query, id: selected })}`
+    );
   };
   onToggleOpen = ({ isOpen }) => {
     this.setState({ isOpen });
@@ -25,8 +28,8 @@ class MyGoogleMap extends React.PureComponent {
 
   render() {
     const props = this.props;
-    const { id } = queryString.parse(props.location.search);
-    const selectedPoint = exampleData[id];
+    const { id, collections } = queryString.parse(props.location.search);
+    const selectedPoint = id ? exampleData[id] : defaultPoint;
     return (
       <GoogleMap
         defaultZoom={12}
@@ -46,6 +49,7 @@ class MyGoogleMap extends React.PureComponent {
                 <div>
                   <h1>{mk.name}</h1>
                   <div>{mk.description}</div>
+                  selected collections: {collections}
                 </div>
               </InfoWindow>
             ) : (
