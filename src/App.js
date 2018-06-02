@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavbarHeader />
-        <p className="App-intro">Container for our app.</p>
+      <p className="App-intro">Map goes here.</p>
       </div>
     );
   }

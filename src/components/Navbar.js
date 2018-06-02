@@ -15,7 +15,7 @@ class NavbarHeader extends Component {
   render() {
     return (
       <div>
-      <MediaQuery minWidth={450} maxWidth={1500}>
+      <MediaQuery minWidth={450} maxWidth={1800}>
         <Navbar collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
