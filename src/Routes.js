@@ -4,7 +4,6 @@ import App from "./App";
 import List from "./List";
 import Detail from "./Detail";
 import NavbarHeader from "./components/Navbar";
-import exampleData from "./exampleData";
 import { init, fetchPoints } from "./clearblade";
 
 import "clearblade-js-client";
@@ -24,13 +23,19 @@ class Routes extends React.PureComponent {
   state = { searchData: {} };
   componentWillMount() {
     init().then(res => {
-      fetchPoints().then(res => {
-        this.setState({ searchData: res });
-      });
+      this.searchLocalPoints({ lat: 30.2297224, long: -97.7560469 });
     });
   }
+  searchLocalPoints = query => {
+    fetchPoints(query).then(res => {
+      this.setState({ searchData: res });
+    });
+  };
   render() {
-    const shared = { searchData: this.state.searchData };
+    const shared = {
+      searchData: this.state.searchData,
+      searchLocalPoints: this.searchLocalPoints
+    };
     return (
       <Router>
         <div>
