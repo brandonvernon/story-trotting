@@ -18,7 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && gcloud compute copy-files build/* h4c:/var/www/html"
+    "deploy": "npm run build && gcloud compute copy-files build/* h4c:/var/www/html",
+    "doc":"jsdoc2md --heading-depth=3 backend/StoryTrotting/code/services/SearchPOI/SearchPOI.js backend/StoryTrotting/code/libraries/Configuration/Configuration.js backend/StoryTrotting/code/libraries/GeospatialUtil/GeospatialUtil.js > API.md"
   },
   "devDependencies": {
     "jsdoc-to-markdown": "^4.0.1"

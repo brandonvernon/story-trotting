@@ -1,18 +1,24 @@
-## Members
+# StoryTrotting
+
+## Overview 
+
+## API
+
+### Members
 
 <dl>
 <dt><a href="#Configuration">Configuration</a></dt>
 <dd></dd>
 </dl>
 
-## Functions
+### Functions
 
 <dl>
 <dt><a href="#SearchPOI">SearchPOI(sort, collections, radius, tags, lat, long)</a> ⇒ <code><a href="#POI">Array.&lt;POI&gt;</a></code></dt>
 <dd></dd>
 </dl>
 
-## Typedefs
+### Typedefs
 
 <dl>
 <dt><a href="#POI">POI</a></dt>
@@ -21,7 +27,7 @@
 
 <a name="Configuration"></a>
 
-## Configuration
+### Configuration
 **Kind**: global variable  
 **Properties**
 
@@ -31,7 +37,7 @@
 
 <a name="SearchPOI"></a>
 
-## SearchPOI(sort, collections, radius, tags, lat, long) ⇒ [<code>Array.&lt;POI&gt;</code>](#POI)
+### SearchPOI(sort, collections, radius, tags, lat, long) ⇒ [<code>Array.&lt;POI&gt;</code>](#POI)
 **Kind**: global function  
 **Returns**: [<code>Array.&lt;POI&gt;</code>](#POI) - pointsOfInterest Points of interest within range  
 
@@ -46,7 +52,7 @@
 
 <a name="POI"></a>
 
-## POI
+### POI
 **Kind**: global typedef  
 **Properties**
 
