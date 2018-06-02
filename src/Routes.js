@@ -5,11 +5,29 @@ import List from "./List";
 import Detail from "./Detail";
 import NavbarHeader from "./components/Navbar";
 import exampleData from "./exampleData";
+import { init, fetchPoints } from "./clearblade";
+
+import "clearblade-js-client";
+/*global ClearBlade*/
+const cb = new ClearBlade();
+var initOptions = {
+  URI: "https://hackforchange.clearblade.com/",
+  messagingURI: "hackforchange.clearblade.com/",
+  messagingPort: 8904,
+  useMQTT: true,
+  cleanSession: true,
+  systemKey: "e0a195b10b9cedb6cceebd87d9e101",
+  systemSecret: "E0A195B10BF4E79FB3BC86F7C4E801"
+};
 
 class Routes extends React.PureComponent {
-  state = {};
+  state = { searchData: {} };
   componentWillMount() {
-    this.setState({ searchData: exampleData });
+    init().then(res => {
+      fetchPoints().then(res => {
+        this.setState({ searchData: res });
+      });
+    });
   }
   render() {
     const shared = { searchData: this.state.searchData };
