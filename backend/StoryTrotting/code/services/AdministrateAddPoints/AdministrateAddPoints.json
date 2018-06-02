@@ -1,0 +1,15 @@
+{
+    "auto_restart": false,
+    "concurrency": 0,
+    "current_version": 41,
+    "dependencies": "log,clearblade",
+    "execution_timeout": 0,
+    "logging_enabled": "false",
+    "name": "AdministrateAddPoints",
+    "params": [
+        "{}"
+    ],
+    "permissions": {},
+    "run_user": "",
+    "source": "AdministrateAddPoints.js"
+}
