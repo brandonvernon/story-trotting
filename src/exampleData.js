@@ -1,6 +1,6 @@
 export const defaultPoint = {
   lat: 30.2297224,
-  lng: -97.7560469,
+  long: -97.7560469,
   address: "109 E 5th, Austin, TX",
   collection: '["Willie Nelson"]',
   description: "Longer desc for willi",
@@ -19,7 +19,7 @@ const myMarkers = {
   sainteds: defaultPoint,
   alamo: {
     lat: 30.248499,
-    lng: -97.771849,
+    long: -97.771849,
     address: "109 E 5th, Austin, TX",
     collection: '["Willie Nelson"]',
     description: "Longer desc for willi",

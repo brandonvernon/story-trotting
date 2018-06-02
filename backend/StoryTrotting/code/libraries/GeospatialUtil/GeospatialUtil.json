@@ -1,0 +1,8 @@
+{
+    "api": "",
+    "dependencies": "",
+    "description": "Geospatial Utilities ",
+    "name": "GeospatialUtil",
+    "version": 16,
+    "visibility": "system"
+}

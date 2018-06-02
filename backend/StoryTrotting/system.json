@@ -1,0 +1,10 @@
+{
+    "auth": true,
+    "deployments": [],
+    "description": "Show stories in an app",
+    "messaging_url": "hackforchange.clearblade.com:1883",
+    "name": "StoryTrotting",
+    "platform_url": "https://hackforchange.clearblade.com",
+    "system_key": "e0a195b10b9cedb6cceebd87d9e101",
+    "system_secret": "E0A195B10BF4E79FB3BC86F7C4E801"
+}

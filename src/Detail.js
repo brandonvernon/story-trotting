@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import queryString from "query-string";
 
 const Detail = ({ match, location, searchData }) => {

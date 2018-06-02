@@ -1,6 +1,4 @@
 import "clearblade-js-client";
-import Q from "q";
-import exampleData from "./exampleData";
 /*global ClearBlade*/
 const cb = new ClearBlade();
 
@@ -24,9 +22,9 @@ export const init = () =>
     cb.init(initOptions);
   });
 
-export const fetchPoints = () =>
+export const fetchPoints = (query = {}) =>
   new Promise((resolve, reject) => {
-    return cb.Code().execute("FakeCodeService", {}, function(err, data) {
+    return cb.Code().execute("FakeCodeService", query, function(err, data) {
       if (err) {
         reject(err);
       } else {
@@ -34,9 +32,6 @@ export const fetchPoints = () =>
           acc[item.id] = item;
           return acc;
         }, {});
-        if (Object.keys(results).length === 0) {
-          resolve(exampleData);
-        }
         resolve(results);
       }
     });

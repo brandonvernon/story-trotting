@@ -1,0 +1,15 @@
+{
+    "auto_restart": false,
+    "concurrency": 0,
+    "current_version": 1,
+    "dependencies": "log",
+    "execution_timeout": 0,
+    "logging_enabled": "false",
+    "name": "Sto",
+    "params": [
+        "{}"
+    ],
+    "permissions": {},
+    "run_user": "",
+    "source": "Sto.js"
+}
