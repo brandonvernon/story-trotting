@@ -29,9 +29,8 @@ class MyGoogleMap extends React.PureComponent {
 
   render() {
     const props = this.props;
-    const { id, collections, lat, lng } = queryString.parse(
-      props.location.search
-    );
+    const query = queryString.parse(props.location.search);
+    const { id, collections, lat, lng } = query;
     const selectedPoint = id ? exampleData[id] : defaultPoint;
     return (
       <GoogleMap
@@ -50,7 +49,14 @@ class MyGoogleMap extends React.PureComponent {
             {this.state.isOpen && mk.id === selectedPoint.id ? (
               <InfoWindow onClick={() => this.onToggleOpen({ isOpen: false })}>
                 <div>
-                  <Link to={`/detail${props.location.search}`}>
+                  <Link
+                    to={`/detail?${queryString.stringify({
+                      ...query,
+                      id: mk.id,
+                      lat: mk.lat,
+                      lng: mk.lng
+                    })}`}
+                  >
                     <h1>{mk.name}</h1>
                   </Link>
                   <div>{mk.description}</div>

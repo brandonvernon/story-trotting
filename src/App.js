@@ -15,7 +15,6 @@ class App extends Component {
           containerElement={<div style={{ height: `800px` }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
-        <p className="App-intro">Container for our app.</p>
       </div>
     );
   }
