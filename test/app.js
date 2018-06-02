@@ -2,77 +2,94 @@ var Configuration = {
 	DEBUG: true,
 	DEBUG_PAYLOAD: 
 	[
-	    {
-        "data": {
-            "description": "Site Supervisor",
-            "id": "",
-            "item_id": "0118829e-a0c7-4147-aa4d-0a90cea2c932",
-            "last_updated": "2017-07-31T16:22:13.331Z",
-            "lat": 40.75498657132572,
-            "long": -74.00346569419297,
-            "type": "supervisor"
-        }
-    },
-    {
-        "data": {
-            "description": "Internet-enabled Construction Equipment",
-            "id": "",
-            "item_id": "01552171-492a-4609-9e63-6a0eeb85a84f",
-            "last_updated": "2017-07-31T16:22:13.331Z",
-            "lat": 40.754355287150105,
-            "long": -74.00281933553157,
-            "type": "tool"
-        }
-    },
-    {
-        "data": {
-            "description": null,
-            "id": "2b",
-            "item_id": "015e90d2-0064-4ea6-afc9-65c20dea03ce",
-            "last_updated": "2018-05-18T21:10:08.653Z",
-            "lat": 30,
-            "long": -97,
-            "type": null
-        }
-    },
-    {
-        "data": {
-            "description": "Internet-enabled Construction Equipment",
-            "id": "",
-            "item_id": "01674588-c0c7-464f-a396-a3d4eb0c8fe9",
-            "last_updated": "2017-07-31T16:22:13.331Z",
-            "lat": 40.754549191025546,
-            "long": -74.00403921262728,
-            "type": "tool"
-        }
-    },
-    {
-        "data": {
-            "description": "Bridgeton Construction Employee",
-            "id": "",
-            "item_id": "019ac799-d0bb-49ff-b473-ace2bd7e0acb",
-            "last_updated": "2017-07-31T16:22:13.331Z",
-            "lat": 40.75527205843725,
-            "long": -74.00394654069638,
-            "type": "contractor"
-        }
-    },
-    {
-        "data": {
-            "description": "Site Supervisor",
-            "id": "",
-            "item_id": "01a2a046-919a-4fc7-bd9f-f50b880bff13",
-            "last_updated": "2017-07-31T16:22:13.331Z",
-            "lat": 40.75553807392197,
-            "long": -74.00565755736416,
-            "type": "supervisor"
-        }
-    }
+		{
+		    "address": "109 E 5th, Austin, TX",
+		    "collection": "[\"Willie Nelson\"]",
+		    "description": "Longer desc for willi",
+		    "id": "willie-nelson-hangout",
+		    "images": "WyJhYXNkYXNkYSJd",
+		    "lat": 30.231044,
+		    "location_name": "Austin, TX",
+		    "long": -97.757495,
+		    "name": "Willie Nelson's Hangout\u0026lt;div\u0026gt;\u0026lt;br\u0026gt;\u0026lt;/div\u0026gt;",
+		    "owner": "rreinold@gmail.com",
+		    "sources": "[\"nbc.org\"]",
+		    "tags": "[\"music\",\"film\"]",
+		    "timestamp": "2010-01-01T00:00:00Z",
+		    "timestamp_end": "2011-01-01T00:00:00Z"
+		}
 	]
+	   //  {
+    //     "data": {
+    //         "description": "Site Supervisor",
+    //         "id": "",
+    //         "item_id": "0118829e-a0c7-4147-aa4d-0a90cea2c932",
+    //         "last_updated": "2017-07-31T16:22:13.331Z",
+    //         "lat": 40.75498657132572,
+    //         "long": -74.00346569419297,
+    //         "type": "supervisor"
+    //     }
+    // },
+    // {
+    //     "data": {
+    //         "description": "Internet-enabled Construction Equipment",
+    //         "id": "",
+    //         "item_id": "01552171-492a-4609-9e63-6a0eeb85a84f",
+    //         "last_updated": "2017-07-31T16:22:13.331Z",
+    //         "lat": 40.754355287150105,
+    //         "long": -74.00281933553157,
+    //         "type": "tool"
+    //     }
+    // },
+    // {
+    //     "data": {
+    //         "description": null,
+    //         "id": "2b",
+    //         "item_id": "015e90d2-0064-4ea6-afc9-65c20dea03ce",
+    //         "last_updated": "2018-05-18T21:10:08.653Z",
+    //         "lat": 30,
+    //         "long": -97,
+    //         "type": null
+    //     }
+    // },
+    // {
+    //     "data": {
+    //         "description": "Internet-enabled Construction Equipment",
+    //         "id": "",
+    //         "item_id": "01674588-c0c7-464f-a396-a3d4eb0c8fe9",
+    //         "last_updated": "2017-07-31T16:22:13.331Z",
+    //         "lat": 40.754549191025546,
+    //         "long": -74.00403921262728,
+    //         "type": "tool"
+    //     }
+    // },
+    // {
+    //     "data": {
+    //         "description": "Bridgeton Construction Employee",
+    //         "id": "",
+    //         "item_id": "019ac799-d0bb-49ff-b473-ace2bd7e0acb",
+    //         "last_updated": "2017-07-31T16:22:13.331Z",
+    //         "lat": 40.75527205843725,
+    //         "long": -74.00394654069638,
+    //         "type": "contractor"
+    //     }
+    // },
+    // {
+    //     "data": {
+    //         "description": "Site Supervisor",
+    //         "id": "",
+    //         "item_id": "01a2a046-919a-4fc7-bd9f-f50b880bff13",
+    //         "last_updated": "2017-07-31T16:22:13.331Z",
+    //         "lat": 40.75553807392197,
+    //         "long": -74.00565755736416,
+    //         "type": "supervisor"
+    //     }
+    // }
+	// ]
 }
 console.log("Startup")
 function startup(){
-  mapboxgl.accessToken = 'pk.eyJ1IjoicnJlaW5vbGQiLCJhIjoiY2lwOTllOGQ2MDB4Y2VhbnJnMWtzcW9qaiJ9.1mNTDQ5rwabgUL9onzaLxg';
+  mapboxgl.accessToken = '';
   console.log("Accesstoken set")
 var mapStyle = {
     "version": 8,
@@ -160,7 +177,7 @@ var map = new mapboxgl.Map({
     bearing: 50,
     hash: true,
     container: 'map',
-    center: [-74.003795,40.754790], 
+    center: [-97.757495,30.231044], 
 });
 map.on('load', onLoad)
 window.mapObj = map
@@ -246,8 +263,8 @@ function addImage(){
 
 	var features = []
 	for(var i = 0 ; i < collection.length ; i++){
-		var goodStuff = collection[i].data
-		var point = generateFeatures(goodStuff.long,goodStuff.lat,goodStuff)
+		var row = collection[i]
+		var point = generateFeatures(row.long,row.lat,row)
 		features.push(point)
 	}
 
@@ -268,12 +285,7 @@ function generateFeatures(long, lat, row){
 					"type": "Point",
 					"coordinates": [long, lat]
 				},
-				"properties":{
-					"type":row.type,
-					"description":row.description,
-					"status":row.payload,
-					"updated":row.last_updated
-				}
+				"properties":row
 				
 	       }
 }
