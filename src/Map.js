@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import exampleData, { defaultPoint } from "./exampleData";
-import { compose, withStateHandlers } from "recompose";
+import { compose } from "recompose";
 import { withRouter } from "react-router-dom";
 import {
   withScriptjs,
@@ -28,14 +28,16 @@ class MyGoogleMap extends React.PureComponent {
 
   render() {
     const props = this.props;
-    const { id, collections } = queryString.parse(props.location.search);
+    const { id, collections, lat, lng } = queryString.parse(
+      props.location.search
+    );
     const selectedPoint = id ? exampleData[id] : defaultPoint;
     return (
       <GoogleMap
         defaultZoom={12}
         defaultCenter={{
-          lat: selectedPoint.lat,
-          lng: selectedPoint.lng
+          lat: lat || defaultPoint.lat,
+          lng: lng || defaultPoint.lng
         }}
       >
         {Object.values(exampleData).map(mk => (
