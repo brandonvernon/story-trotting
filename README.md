@@ -1,2 +1,2 @@
 # story-trotting
-Explore Stories Around You
+Explore Stories Around You.
