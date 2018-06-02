@@ -31,7 +31,8 @@ class MyGoogleMap extends React.PureComponent {
     const props = this.props;
     const query = queryString.parse(props.location.search);
     const { id, collections, lat, lng } = query;
-
+    const selectedPoint = id && this.props.searchData[id];
+    console.log(this.props.searchData)
     return (
       <GoogleMap
         defaultZoom={12}
