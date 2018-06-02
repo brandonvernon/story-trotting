@@ -4,18 +4,41 @@ import App from "./App";
 import List from "./List";
 import Detail from "./Detail";
 import NavbarHeader from "./components/Navbar";
+import exampleData from "./exampleData";
 
-const BasicExample = () => (
-  <Router>
-    <div>
-      <NavbarHeader />
+class Routes extends React.PureComponent {
+  state = {};
+  componentWillMount() {
+    this.setState({ searchData: exampleData });
+  }
+  render() {
+    const shared = { searchData: this.state.searchData };
+    return (
+      <Router>
+        <div>
+          <NavbarHeader />
 
-      <Route exact path="/" component={App} />
-      <Route path="/list" component={List} />
-      <Route path="/home" component={App} />
-      <Route path="/detail" component={Detail} />
-    </div>
-  </Router>
-);
+          <Route
+            exact
+            path="/"
+            render={props => <App {...shared} {...props} />}
+          />
+          <Route
+            path="/list"
+            render={props => <List {...shared} {...props} />}
+          />
+          <Route
+            path="/home"
+            render={props => <App {...shared} {...props} />}
+          />
+          <Route
+            path="/detail"
+            render={props => <Detail {...shared} {...props} />}
+          />
+        </div>
+      </Router>
+    );
+  }
+}
 
-export default BasicExample;
+export default Routes;

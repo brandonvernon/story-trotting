@@ -1,5 +1,5 @@
 import React from "react";
-import exampleData, { defaultPoint } from "./exampleData";
+import { defaultPoint } from "./exampleData";
 import { compose } from "recompose";
 import { withRouter } from "react-router-dom";
 import {
@@ -29,10 +29,10 @@ class MyGoogleMap extends React.PureComponent {
 
   render() {
     const props = this.props;
-    const { id, collections, lat, lng } = queryString.parse(
-      props.location.search
-    );
-    const selectedPoint = id ? exampleData[id] : defaultPoint;
+    const query = queryString.parse(props.location.search);
+    const { id, collections, lat, lng } = query;
+    const selectedPoint = id && this.props.searchData[id];
+
     return (
       <GoogleMap
         defaultZoom={12}
@@ -41,16 +41,23 @@ class MyGoogleMap extends React.PureComponent {
           lng: lng ? Number(lng) : defaultPoint.lng
         }}
       >
-        {Object.values(exampleData).map(mk => (
+        {Object.values(this.props.searchData).map(mk => (
           <Marker
             key={`${mk.lat}${mk.lng}`}
             position={{ lat: mk.lat, lng: mk.lng }}
             onClick={() => this.onClick({ selected: mk.id })}
           >
-            {this.state.isOpen && mk.id === selectedPoint.id ? (
+            {this.state.isOpen && mk.id === id ? (
               <InfoWindow onClick={() => this.onToggleOpen({ isOpen: false })}>
                 <div>
-                  <Link to={`/detail${props.location.search}`}>
+                  <Link
+                    to={`/detail?${queryString.stringify({
+                      ...query,
+                      id: mk.id,
+                      lat: mk.lat,
+                      lng: mk.lng
+                    })}`}
+                  >
                     <h1>{mk.name}</h1>
                   </Link>
                   <div>{mk.description}</div>

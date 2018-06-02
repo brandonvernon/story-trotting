@@ -11,6 +11,7 @@ class App extends Component {
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `800px` }} />}
           mapElement={<div style={{ height: `100%` }} />}
+          searchData={this.props.searchData}
         />
       </div>
     );
