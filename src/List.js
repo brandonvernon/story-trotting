@@ -2,15 +2,17 @@ import React from "react";
 import exampleData from "./exampleData";
 import { Link } from "react-router-dom";
 import queryString from "query-string";
+import './List.css';
 
 const List = ({ match, location }) => {
   const query = queryString.parse(location.search);
   return (
-    <div>
+    <div className="wrapper">
+    <div className="container">
       <h2>List</h2>
       {Object.values(exampleData).map(mk => {
         return (
-          <div key={mk.id}>
+          <div className="list-link" key={mk.id}>
             <Link
               to={`/home?${queryString.stringify({
                 ...query,
@@ -25,7 +27,7 @@ const List = ({ match, location }) => {
         );
       })}
       <h2>Collections</h2>
-      <div>
+      <div className="list-link">
         <Link
           to={`/home?${queryString.stringify({
             collections: ["Willie Nelson", "Movies"]
@@ -33,6 +35,7 @@ const List = ({ match, location }) => {
         >
           Movies
         </Link>
+      </div>
       </div>
     </div>
   );
