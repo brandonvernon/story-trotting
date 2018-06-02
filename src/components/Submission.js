@@ -79,11 +79,15 @@ class Submission extends Component {
               <input type="text" value={this.state.timestamp_end} onChange={this.handleChange} />
             </label>
             <label>
-              Sources
-              <input type="text" value={this.state.sources} onChange={this.handleChange} />
+              Current Time
+              <input type="text" value={this.state.timestamp_created} onChange={this.handleChange} />
             </label>
           </div>
           <div className='row'>
+            <label>
+              Sources
+              <input type="text" value={this.state.sources} onChange={this.handleChange} />
+            </label>
             <label>
               Your Name
               <input type="text" value={this.state.owner} onChange={this.handleChange} />
