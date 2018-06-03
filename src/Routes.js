@@ -5,6 +5,8 @@ import List from "./List";
 import Detail from "./Detail";
 import NavbarHeader from "./components/Navbar";
 import { init, fetchPoints } from "./clearblade";
+import Submission from "./components/Submission";
+import ImageUpload from "./components/ImageUpload";
 
 import "clearblade-js-client";
 /*global ClearBlade*/
@@ -57,6 +59,11 @@ class Routes extends React.PureComponent {
           <Route
             path="/detail"
             render={props => <Detail {...shared} {...props} />}
+          />
+
+          <Route
+            path="/new"
+            render={props => <Submission {...shared} {...props} />}
           />
         </div>
       </Router>
