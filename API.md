@@ -10,6 +10,11 @@
 <dl>
 <dt><a href="#SearchPOI">SearchPOI(sort, collections, radius, tags, lat, long)</a> ⇒ <code><a href="#POI">Array.&lt;POI&gt;</a></code></dt>
 <dd></dd>
+<dt><a href="#UpdatePOI">UpdatePOI(changes)</a></dt>
+<dd><p>Edit POI</p>
+</dd>
+<dt><a href="#createPOI">createPOI(pointOfInterest)</a></dt>
+<dd></dd>
 </dl>
 
 ### Typedefs
@@ -44,6 +49,26 @@
 | lat | <code>number</code> | Latitudinal center of search, in decimal, ex 70.10343 |
 | long | <code>number</code> | Longitudinal center of search, in decimal, ex 34.444 |
 
+<a name="UpdatePOI"></a>
+
+### UpdatePOI(changes)
+Edit POI
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| changes | [<code>POI</code>](#POI) | changeset of key/values,ex {"name":"yolo","image_url":"https://newimages.com"} |
+
+<a name="createPOI"></a>
+
+### createPOI(pointOfInterest)
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| pointOfInterest | [<code>POI</code>](#POI) | new point of interest to create Generates ID with name |
+
 <a name="POI"></a>
 
 ### POI
@@ -56,6 +81,7 @@
 | name | <code>string</code> | Human-readable title for the POI, ex "Something happened here" |
 | description | <code>string</code> | Human-readable description for POI, can be long |
 | owner | <code>string</code> | Email of user who submitted |
+| collection | <code>Array.&lt;Collection&gt;</code> | Parent collection for this POI, ex belongs to 'Lyndon B Johnson' collection |
 | lat | <code>double</code> | Latitude of POI, in decimals, ex -70.234234 |
 | long | <code>double</code> | Longitude of POI, in decimals, ex 30.8372 |
 | images | <code>blob</code> | (Optional) base64 blob of images, defaults is null |
@@ -71,7 +97,7 @@
 ```js
 {
       "address": "2313 Red River St, Austin, TX 78705",
-      "collection": "[Lyndon B Johnson]",
+      "collection": "['Lyndon B Johnson']",
       "description": "This is also where his wife lay in repose in July of 2007",
       "id": "lbj-library-repose",
       "images": "",
