@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import {Modal, ModalHeader} from "react-bootstrap";
-import queryString from 'query-string';
-import {Link} from 'react-router-dom';
-import {distanceInWordsToNow, format} from 'date-fns'
-import './Detail.css'
+import React, { Component } from "react";
+import { Modal, ModalHeader } from "react-bootstrap";
+import queryString from "query-string";
+import { Link } from "react-router-dom";
+import { distanceInWordsToNow, format } from "date-fns";
+import "./Detail.css";
 
 class Detail extends Component {
   constructor(props, context) {
@@ -15,20 +15,18 @@ class Detail extends Component {
 
   handleClose() {
     this.props.history.push("/");
-    this.setState({show: false});
+    this.setState({ show: false });
   }
 
   handleShow() {
-    this.setState({show: true});
+    this.setState({ show: true });
   }
 
   render() {
-
-    const {match, location, searchData, searchLocalPoints} = this.props;
-    const {id, lat, long} = queryString.parse(location.search);
+    const { match, location, searchData, searchLocalPoints } = this.props;
+    const { id, lat, long } = queryString.parse(location.search);
     const selectedPoint = searchData[id];
-    if (!selectedPoint)
-      return <div>Loading</div>;
+    if (!selectedPoint) return <div>Loading</div>;
 
     return (
       <div className="Detail">
@@ -45,9 +43,19 @@ class Detail extends Component {
                 <b>Collection:
                 </b>
                 {" "}
-                {JSON.parse(selectedPoint.collection).map(coll => (
-                  <Link to={`/?${queryString.stringify({collection: coll})}`}>
-                    {coll}
+                <b>Collection:</b>
+                {" "}{JSON.parse(selectedPoint.collection).map(coll => (
+                  <Link
+                    to={`/?${queryString.stringify({ collection: coll })}`}
+                    onClick={() =>
+                      searchLocalPoints({
+                        lat: Number(lat),
+                        long: Number(long),
+                        collection: [coll]
+                      })
+                    }
+                  >
+                    {" "}{coll}
                   </Link>
                 ))}
               </div>
@@ -64,10 +72,19 @@ class Detail extends Component {
               <div>
                 <b>Date:
                 </b>{" "}{format(selectedPoint.timestamp, 'MMM DD YYYY')}
+                <b>Location Name:</b>
+                {" "}{selectedPoint.location_name}
+              </div>
+              <div>
+                <b>Address:</b>
+                {" "}{selectedPoint.address}
+              </div>
+              <div>
+                <b>Date:</b>
+                {" "}{format(selectedPoint.timestamp, "MMM DD YYYY")}
               </div>
               <div className="citation">
-                <b>Source:
-                </b>{' '}
+                <b>Source:</b>{" "}
                 <a target="blank" href={selectedPoint.sources}>
                   {" "}{selectedPoint.sources}
                 </a>
@@ -90,8 +107,8 @@ class Detail extends Component {
           </div>
         </Modal>
       </div>
-    )
+    );
   }
 }
 
-export default Detail
+export default Detail;

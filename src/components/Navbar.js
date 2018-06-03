@@ -14,6 +14,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import queryString from "query-string";
+import './Navbar.css'
 
 class NavbarHeader extends Component {
   render() {
@@ -25,8 +26,8 @@ class NavbarHeader extends Component {
         <MediaQuery minWidth={450} maxWidth={1500}>
           <Navbar collapseOnSelect>
             <Navbar.Header>
-              <Navbar.Brand>
-                <Link to="/home">Story Strotting</Link>
+              <Navbar.Brand className='Brand'>
+                <Link to="/home">Story Trotting</Link>
               </Navbar.Brand>
               <Navbar.Toggle />
               <Navbar.Form pullLeft>
