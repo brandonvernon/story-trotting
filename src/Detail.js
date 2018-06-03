@@ -44,6 +44,7 @@ class Detail extends Component {
               <div>
                 <b>Collection:
                 </b>
+                {" "}
                 {JSON.parse(selectedPoint.collection).map(coll => (
                   <Link to={`/?${queryString.stringify({collection: coll})}`}>
                     {coll}
@@ -53,22 +54,22 @@ class Detail extends Component {
               <div>
                 <b>Location Name:
                 </b>
-                {selectedPoint.location_name}
+                 {" "}{selectedPoint.location_name}
               </div>
               <div>
                 <b>Address:
                 </b>
-                {selectedPoint.address}
+                {" "}{selectedPoint.address}
               </div>
               <div>
                 <b>Date:
-                </b>{format(selectedPoint.timestamp, 'MMM DD YYYY')}
+                </b>{" "}{format(selectedPoint.timestamp, 'MMM DD YYYY')}
               </div>
               <div className="citation">
                 <b>Source:
                 </b>{' '}
                 <a target="blank" href={selectedPoint.sources}>
-                  {selectedPoint.sources}
+                  {" "}{selectedPoint.sources}
                 </a>
               </div>
               {/*    <div>
