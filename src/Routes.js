@@ -41,8 +41,8 @@ class Routes extends React.PureComponent {
     return (
       <Router>
         <div>
-          <NavbarHeader />
-          <App {...shared}/>
+          <NavbarHeader {...shared} />
+          <App {...shared} />
           <Route
             path="/list"
             render={props => <List {...shared} {...props} />}
@@ -55,11 +55,11 @@ class Routes extends React.PureComponent {
             <Route
               path="/new"
               render={props => <Submission {...shared} {...props} />}
-              />
+            />
             <Route
               path="/new"
               render={props => <ImageUpload {...shared} {...props} />}
-              />
+            />
           </div>
         </div>
       </Router>
