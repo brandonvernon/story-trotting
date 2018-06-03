@@ -11,11 +11,6 @@ class List extends Component {
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
-
-    this.state = {
-      value: '',
-      show: false
-    };
   }
 
   componentWillMount() {
@@ -23,6 +18,7 @@ class List extends Component {
   }
 
   handleClose() {
+    this.props.history.push('/')
     this.setState({show: false});
   }
 
@@ -40,9 +36,9 @@ class List extends Component {
           List View
 
         </a>
-        <Modal show={this.state.show} onHide={this.handleClose}>
+        <Modal show={true} onHide={this.handleClose}>
 
-        <div className="container">
+        <div className="">
           <h2>Collections</h2>
           <div className="list-link">
             <Link

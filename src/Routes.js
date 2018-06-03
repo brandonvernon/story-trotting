@@ -42,20 +42,12 @@ class Routes extends React.PureComponent {
       <Router>
         <div>
           <NavbarHeader />
-
-          <Route
-            exact
-            path="/"
-            render={props => <App {...shared} {...props} />}
-          />
+           <App {...shared}/>
           <Route
             path="/list"
             render={props => <List {...shared} {...props} />}
           />
-          <Route
-            path="/home"
-            render={props => <App {...shared} {...props} />}
-          />
+
           <Route
             path="/detail"
             render={props => <Detail {...shared} {...props} />}
