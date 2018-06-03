@@ -55,7 +55,7 @@ class MyGoogleMap extends React.PureComponent {
   render() {
     const props = this.props;
     const query = queryString.parse(props.location.search);
-    const { id, collections, lat, long } = query;
+    const { id, collection, lat, long } = query;
     const defaultCenter = {
       lat: lat ? Number(lat) : this.state.defaultPoint.lat,
       lng: long ? Number(long) : this.state.defaultPoint.long
@@ -88,7 +88,6 @@ class MyGoogleMap extends React.PureComponent {
                     <h4>{mk.name}</h4>
                   </Link>
                   <div>{mk.description}</div>
-                  selected collections: {collections}
                 </div>
               </InfoWindow>
             ) : (
