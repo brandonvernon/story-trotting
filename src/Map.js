@@ -17,7 +17,7 @@ import getLocation from './helpers/location'
 class MyGoogleMap extends React.PureComponent {
   state = {
     isOpen: false,
-    defaultPoint: {},
+    defaultPoint: defaultPoint
   }
   onClick = ({selected}) => {
     this.onToggleOpen({isOpen: true})
@@ -51,8 +51,8 @@ class MyGoogleMap extends React.PureComponent {
       <GoogleMap
         defaultZoom={12}
         defaultCenter={{
-          lat: lat ? Number(lat) : defaultPoint.lat,
-          lng: lng ? Number(lng) : defaultPoint.lng,
+          lat: lat ? Number(lat) : this.state.defaultPoint.lat,
+          lng: lng ? Number(lng) : this.state.defaultPoint.lng,
         }}>
         {Object.values(this.props.searchData).map(mk => (
           <Marker
