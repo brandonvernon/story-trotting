@@ -6,6 +6,7 @@ class App extends Component {
     return (
       <div className="App">
         <Map
+          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyYYw8iN6wvnls4z0Bx4yRnsUx5iOsqIw&v=3.exp&libraries=geometry,drawing,places"
           {...this.props}
           isMarkerShown
           googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
