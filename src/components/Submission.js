@@ -24,74 +24,102 @@ class Submission extends Component {
       <div className='container'>
         <form className='form' onSubmit={this.handleSubmit}>
           <div className='row'>
-            <label className='col'>
-              Headline
-              <input type="text" value={this.state.name} onChange={this.handleChange} />
-            </label>
-            <label className='col'>
-              Description
-              <input type="text" value={this.state.description} onChange={this.handleChange} />
-            </label>
+            <div className='col'>
+              <label>
+                Headline
+                <input type="text" value={this.state.name} onChange={this.handleChange} />
+              </label>
+            </div>
+            <div className='col'>
+              <label>
+                Description
+                <input type="text" value={this.state.description} onChange={this.handleChange} />
+              </label>
+            </div>
           </div>
           <div className='row'>
-            <label className='col'>
-              Location Name
-              <input type="text" value={this.state.location_name} onChange={this.handleChange} />
-            </label>
-            <label className='col'>
-              Address
-              <input type="text" value={this.state.address} onChange={this.handleChange} />
-            </label>
+            <div className='col'>
+              <label>
+                Location Name
+                <input type="text" value={this.state.location_name} onChange={this.handleChange} />
+              </label>
+            </div>
+            <div className='col'>
+              <label>
+                Address
+                <input type="text" value={this.state.address} onChange={this.handleChange} />
+              </label>
+            </div>
           </div>
           <div className='row'>
-            <label className='col'>
-              Latitude
-              <input type="text" value={this.state.lat} onChange={this.handleChange} />
-            </label>
-            <label className='col'>
-              Longitude
-              <input type="text" value={this.state.long} onChange={this.handleChange} />
-            </label>
+            <div className='col'>
+              <label>
+                Latitude
+                <input type="text" value={this.state.lat} onChange={this.handleChange} />
+              </label>
+            </div>
+            <div className='col'>
+              <label>
+                Longitude
+                <input type="text" value={this.state.long} onChange={this.handleChange} />
+              </label>
+            </div>
           </div>
           <div className='row'>
-            <label className='col'>
-              Drop Pin
-              <input type="text" value={this.state.drop_pin} onChange={this.handleChange} />
-            </label>
-            <label className='col'>
-              Tags
-              <input type="text" value={this.state.tags} onChange={this.handleChange} />
-            </label>
+            <div className='col'>
+              <label>
+                Drop Pin
+                <input type="text" value={this.state.drop_pin} onChange={this.handleChange} />
+              </label>
+            </div>
+            <div className='col'>
+              <label>
+                Tags
+                <input type="text" value={this.state.tags} onChange={this.handleChange} />
+              </label>
+            </div>
           </div>
           <div className='row'>
-            <label className='col'>
-              Collection
-              <input type="text" value={this.state.collection} onChange={this.handleChange} />
-            </label>
-            <label className='col'>
-              Time
-              <input type="text" value={this.state.timestamp} onChange={this.handleChange} />
-            </label>
+            <div className='col'>
+              <label>
+                Collection
+                <input type="text" value={this.state.collection} onChange={this.handleChange} />
+              </label>
+            </div>
+            <div className='col'>
+              <label>
+                Time
+                <input type="text" value={this.state.timestamp} onChange={this.handleChange} />
+              </label>
+            </div>
           </div>
           <div className='row'>
-            <label className='col'>
-              Time End
-              <input type="text" value={this.state.timestamp_end} onChange={this.handleChange} />
-            </label>
-            <label className='col'>
-              Current Time
-              <input type="text" value={this.state.timestamp_created} onChange={this.handleChange} />
-            </label>
+            <div className='col'>
+              <label>
+                Time End
+                <input type="text" value={this.state.timestamp_end} onChange={this.handleChange} />
+              </label>
+            </div>
+            <div className='col'>
+              <label>
+                Current Time
+                <input type="text" value={this.state.timestamp_created} onChange={this.handleChange} />
+              </label>
+            </div>
           </div>
           <div className='row'>
-            <label className='col'>
-              Sources
-              <input type="text" value={this.state.sources} onChange={this.handleChange} />
-            </label>
-            <label className='col'>
-              Your Name
-              <input type="text" value={this.state.owner} onChange={this.handleChange} />
-            </label>
+            <div className='col'>
+              <label>
+                Sources
+                <input type="text" value={this.state.sources} onChange={this.handleChange} />
+              </label>
+            </div>
+            <div className='col'>
+              <label>
+                Your Name
+                <input type="text" value={this.state.owner} onChange={this.handleChange} />
+              </label>
+            </div>
           </div>
             <input type="submit" value="Submit" />
         </form>
