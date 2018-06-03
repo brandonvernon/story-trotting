@@ -13,7 +13,6 @@ const Detail = ({ match, location, searchData, searchLocalPoints }) => {
       <h2>{selectedPoint.name}</h2>
       <h4>{selectedPoint.description}</h4>
 
-<<<<<<< HEAD
       <div className="stats">
         <div>
         <b>Collection: </b>
