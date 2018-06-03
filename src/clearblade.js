@@ -22,19 +22,31 @@ export const init = () =>
     cb.init(initOptions);
   });
 
-export const fetchPoints = (query = {}) =>
+export const fetchPoints = (query = { collections: ["Dazed and Confused"] }) =>
   new Promise((resolve, reject) => {
-    return cb.Code().execute("FakeCodeService", query, function(err, data) {
-      if (err) {
-        reject(err);
-      } else {
-        const results = data.results.DATA.reduce((acc, item) => {
-          acc[item.id] = item;
-          return acc;
-        }, {});
-        resolve(results);
+    return cb.Code().execute(
+      "FakeCodeService",
+      {
+        lat: 30.231044,
+        long: -97.757495,
+        collection: ["Dazed and Confused"]
+      },
+      function(err, data) {
+        if (err) {
+          reject(err);
+        } else {
+          if (data.results.DATA) {
+            const results = data.results.DATA.reduce((acc, item) => {
+              acc[item.id] = item;
+              return acc;
+            }, {});
+            resolve(results);
+          } else {
+            resolve({});
+          }
+        }
       }
-    });
+    );
   });
 
 export const addPoint = (point = {}) =>
