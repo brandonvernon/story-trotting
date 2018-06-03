@@ -1,11 +1,11 @@
 {
     "auto_restart": false,
     "concurrency": 0,
-    "current_version": 96,
-    "dependencies": "log,clearblade,Configuration,GeospatialUtil",
+    "current_version": 15,
+    "dependencies": "log,Configuration,clearblade",
     "execution_timeout": 0,
     "logging_enabled": "true",
-    "name": "SearchPOI",
+    "name": "createPOI",
     "params": [
         "{}"
     ],
@@ -14,5 +14,5 @@
         "POIService": 1
     },
     "run_user": "c4f897b10bcced9795dae7de82b001",
-    "source": "SearchPOI.js"
+    "source": "createPOI.js"
 }

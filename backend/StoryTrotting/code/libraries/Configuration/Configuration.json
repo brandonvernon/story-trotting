@@ -3,6 +3,6 @@
     "dependencies": "",
     "description": "Configuration for Story Trotting",
     "name": "Configuration",
-    "version": 12,
+    "version": 15,
     "visibility": "system"
 }
