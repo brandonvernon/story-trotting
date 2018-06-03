@@ -13,11 +13,13 @@ import {
 import {Link} from 'react-router-dom'
 import queryString from 'query-string'
 import getLocation from './helpers/location'
+import './Map.css'
 
 class MyGoogleMap extends React.PureComponent {
   state = {
     isOpen: false,
-    defaultPoint: defaultPoint
+    defaultPoint: defaultPoint,
+    zoomLevel: 12 
   }
   onClick = ({selected}) => {
     this.onToggleOpen({isOpen: true})
@@ -29,7 +31,7 @@ class MyGoogleMap extends React.PureComponent {
   onToggleOpen = ({isOpen}) => {
     this.setState({isOpen})
   }
-  componentWillMount() {
+  updateLocation = () => {
     getLocation()
       .then(result => {
         this.setState({
@@ -42,18 +44,27 @@ class MyGoogleMap extends React.PureComponent {
       })
       .catch(err => console.log(err))
   }
+  componentWillMount() {
+    this.updateLocation()
+  }
+  componentDidMount() {
+    setInterval(() => {
+      this.updateLocation()
+    }, 30000)
+  }
   render() {
     const props = this.props
     const query = queryString.parse(props.location.search)
     const {id, collections, lat, lng} = query
-    const selectedPoint = id && this.props.searchData[id]
+    //const selectedPoint = id && this.props.searchData[id]
     return (
       <GoogleMap
-        defaultZoom={12}
+        defaultZoom={this.state.zoomLevel}
         defaultCenter={{
           lat: lat ? Number(lat) : this.state.defaultPoint.lat,
           lng: lng ? Number(lng) : this.state.defaultPoint.lng,
-        }}>
+        }}
+      >
         {Object.values(this.props.searchData).map(mk => (
           <Marker
             key={`${mk.lat}${mk.long}${mk.id}`}
@@ -84,10 +95,12 @@ class MyGoogleMap extends React.PureComponent {
           </Marker>
         ))}
         <Circle
+          className='userLocMark'
           center={this.state.defaultPoint}
-          radius={800}
+          defaultRadius={200}
           options={{
             fillColor: '#f00',
+            fillOpacity: '0.7', 
             strokeColor: '#f00',
           }}
         />
@@ -101,3 +114,10 @@ const Map = compose(withScriptjs, withGoogleMap, withRouter)(props => {
 })
 
 export default Map
+
+// componentDidMount: function() {
+//    var intervalId = setInterval(this.timer, 1000);
+//    // store intervalId in the state so it can be accessed later:
+//    this.setState({intervalId: intervalId});
+// },
+
