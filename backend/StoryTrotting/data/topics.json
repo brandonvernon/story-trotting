@@ -1,0 +1,32 @@
+{
+    "app_id": "e0a195b10b9cedb6cceebd87d9e101",
+    "collection_id": "b6e296b10baeccbea3f8b5dcd34a",
+    "items": [
+        {
+            "description": null,
+            "item_id": "c106f53d-4770-44f5-8d89-638ae8ef343a",
+            "name": "Willie Nelson"
+        }
+    ],
+    "name": "topics",
+    "permissions": {
+        "POIService": 0
+    },
+    "schema": [
+        {
+            "ColumnName": "item_id",
+            "ColumnType": "uuid",
+            "PK": true
+        },
+        {
+            "ColumnName": "name",
+            "ColumnType": "string",
+            "PK": false
+        },
+        {
+            "ColumnName": "description",
+            "ColumnType": "string",
+            "PK": false
+        }
+    ]
+}

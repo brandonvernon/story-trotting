@@ -1,9 +1,3 @@
-# StoryTrotting
-
-## Overview 
-
-## API
-
 ### Members
 
 <dl>

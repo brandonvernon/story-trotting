@@ -1,0 +1,16 @@
+{
+    "app_id": "e0a195b10b9cedb6cceebd87d9e101",
+    "collection_id": "90a197b10bb4cdcc9281aac5934f",
+    "items": [],
+    "name": "collection",
+    "permissions": {
+        "POIService": 1
+    },
+    "schema": [
+        {
+            "ColumnName": "item_id",
+            "ColumnType": "uuid",
+            "PK": true
+        }
+    ]
+}

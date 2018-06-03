@@ -58,7 +58,8 @@ class NavbarHeader extends Component {
           <Navbar collapseOnSelect fixedBottom>
             <Nav>
               <NavItem eventKey={1} href="#">
-                <ListModal />
+                <ListModal
+               />
               </NavItem>
               <NavItem eventKey={1} href="#">
                 Filters

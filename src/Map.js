@@ -32,19 +32,19 @@ class MyGoogleMap extends React.PureComponent {
     const query = queryString.parse(props.location.search);
     const { id, collections, lat, lng } = query;
     const selectedPoint = id && this.props.searchData[id];
-
+    console.log(this.props.searchData)
     return (
       <GoogleMap
         defaultZoom={12}
         defaultCenter={{
           lat: lat ? Number(lat) : defaultPoint.lat,
-          lng: lng ? Number(lng) : defaultPoint.lng
+          lng: lng ? Number(lng) : defaultPoint.long
         }}
       >
         {Object.values(this.props.searchData).map(mk => (
           <Marker
-            key={`${mk.lat}${mk.lng}`}
-            position={{ lat: mk.lat, lng: mk.lng }}
+            key={`${mk.lat}${mk.long}${mk.id}`}
+            position={{ lat: mk.lat, lng: mk.long }}
             onClick={() => this.onClick({ selected: mk.id })}
           >
             {this.state.isOpen && mk.id === id ? (
@@ -58,7 +58,7 @@ class MyGoogleMap extends React.PureComponent {
                       lng: mk.lng
                     })}`}
                   >
-                    <h1>{mk.name}</h1>
+                    <h4>{mk.name}</h4>
                   </Link>
                   <div>{mk.description}</div>
                   selected collections: {collections}
