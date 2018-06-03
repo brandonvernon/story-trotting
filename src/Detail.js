@@ -3,8 +3,8 @@ import queryString from "query-string";
 import { Link } from "react-router-dom";
 import { distanceInWordsToNow, format } from "date-fns";
 
-const Detail = ({ match, location, searchData }) => {
-  const { id } = queryString.parse(location.search);
+const Detail = ({ match, location, searchData, searchLocalPoints }) => {
+  const { id, lat, long } = queryString.parse(location.search);
   const selectedPoint = searchData[id];
   if (!selectedPoint) return <div>Loading</div>;
   return (
@@ -13,7 +13,16 @@ const Detail = ({ match, location, searchData }) => {
       <h4>{selectedPoint.description}</h4>
 
       {JSON.parse(selectedPoint.collection).map(coll => (
-        <Link to={`/?${queryString.stringify({ collection: coll })}`}>
+        <Link
+          to={`/?${queryString.stringify({ collection: coll })}`}
+          onClick={() =>
+            searchLocalPoints({
+              lat: Number(lat),
+              long: Number(long),
+              collection: [coll]
+            })
+          }
+        >
           {coll}
         </Link>
       ))}
