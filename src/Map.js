@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import queryString from "query-string";
 import getLocation from "./helpers/location";
 // import './Map.css'
+import mapStyle from "./mapStyle.js";
 
 class MyGoogleMap extends React.PureComponent {
   state = {
@@ -40,7 +41,6 @@ class MyGoogleMap extends React.PureComponent {
             long: result.coords.longitude
           }
         });
-        console.log(this.state.defaultPoint);
       })
       .catch(err => console.log(err));
   };
@@ -64,6 +64,7 @@ class MyGoogleMap extends React.PureComponent {
       <GoogleMap
         defaultZoom={this.state.zoomLevel}
         defaultCenter={defaultCenter}
+        options={{ styles: mapStyle }}
       >
         {Object.values(this.props.searchData).map(mk => (
           <Marker
