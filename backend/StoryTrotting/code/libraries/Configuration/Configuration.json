@@ -1,0 +1,8 @@
+{
+    "api": "",
+    "dependencies": "",
+    "description": "Configuration for Story Trotting",
+    "name": "Configuration",
+    "version": 12,
+    "visibility": "system"
+}

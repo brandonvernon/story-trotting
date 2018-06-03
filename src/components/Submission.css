@@ -1,0 +1,17 @@
+form {
+  margin: 20px;
+  width: 90%;
+}
+
+.control-label {
+  padding-right: 10px;
+}
+
+#formBasicText {
+
+}
+
+.imgPreview {
+  margin: auto;
+  width: 25%;
+}

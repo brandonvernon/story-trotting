@@ -3,9 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "clearblade-js-client": "^1.0.3",
+    "date-fns": "^1.29.0",
+    "query-string": "5.1.1",
     "react": "^16.4.0",
+    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.0",
     "react-google-maps": "^9.4.5",
+    "react-responsive": "^4.1.0",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4"
   },
   "scripts": {
@@ -13,6 +19,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy":"npm run build && gcloud compute copy-files build/* h4c:/var/www/html"
+    "deploy": "npm run build && gcloud compute copy-files build/* h4c:/var/www/html",
+    "doc": "jsdoc2md --heading-depth=3 backend/StoryTrotting/code/services/SearchPOI/SearchPOI.js backend/StoryTrotting/code/libraries/Configuration/Configuration.js backend/StoryTrotting/code/libraries/GeospatialUtil/GeospatialUtil.js > API.md"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "^4.0.1"
   }
 }

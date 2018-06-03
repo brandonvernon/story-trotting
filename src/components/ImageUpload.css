@@ -1,0 +1,12 @@
+.previewComponent {
+  padding-top: 20px;
+}
+
+.imgPreview {
+  width: 150px;
+}
+
+img {
+  padding-top: 10px;
+  max-width: 100%;
+}
