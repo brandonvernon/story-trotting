@@ -1,15 +1,21 @@
-.container {
+form {
+  margin: auto;
+  width: 25%;
+}
+
+div {
+  text-align: right;
+}
+
+.control-label {
+  padding-right: 10px;
+}
+
+#formBasicText {
 
 }
 
-.form {
-
-}
-
-.row {
-
-}
-
-.col {
-  
+.imgPreview {
+  margin: auto;
+  width: 25%;
 }
