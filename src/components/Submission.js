@@ -4,7 +4,8 @@ import {
   ControlLabel,
   FormControl,
   HelpBlock,
-  FormExample
+  FormExample,
+  Modal
 } from "react-bootstrap";
 import "./Submission.css";
 import { addPoint } from "../clearblade";
@@ -15,8 +16,27 @@ class Submission extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
 
-    this.state = { value: "" };
+    this.state = {
+      value: "",
+      name: "",
+      location_name: "",
+      address:"",
+      collection:[],
+      tags: [],
+      images: "",
+      lat: "",
+      long: "",
+      tagsArray: [],
+      collectionsArray: [],
+      owner: "",
+      source: "",
+      timestamp: "",
+      timestamp_created: "",
+      timestamp_end: "",
+     };
   }
 
   getValidationState() {
@@ -34,13 +54,48 @@ class Submission extends Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log(this.state);
-    addPoint(this.state).then(res => {
-      debugger;
+
+    let tagsArray = this.state.tags.split(" ");
+    let collectionsArray = this.state.collection.split(" ");
+
+    let newEvent = {
+      address: this.state.address,
+      name: this.state.name,
+      description: this.state.description,
+      tags: tagsArray,
+      collection: this.state.collection,
+      value: this.state.value,
+      location_name: this.state.location_name,
+      images: this.state.images,
+      owner: this.state.owner,
+      source: this.state.source,
+      timestamp_created: this.state.timestamp_created,
+      timestamp_end: this.state.timestamp_end,
+    }
+
+    addPoint(newEvent).then(res => {
+      console.log(newEvent);
+      // debugger;
     });
+  }
+
+  handleClose() {
+    this.props.history.push('/')
+    this.setState({show: false});
+  }
+
+  handleShow() {
+    this.setState({show: true});
   }
 
   render() {
     return (
+      <div>
+      <a onClick={this.handleShow}>
+        + Add a Story
+      </a>
+      <Modal show={true} onHide={this.handleClose}>
+
       <form onSumbit={this.handleSubmit}>
         <FormGroup
           controlId="formBasicText"
@@ -51,22 +106,24 @@ class Submission extends Component {
             type="text"
             id="name"
             value={this.state.name}
-            placeholder="Enter text"
+            placeholder="Enter Headline"
             onChange={this.handleChange}
           />
           <FormControl.Feedback />
           <HelpBlock />
         </FormGroup>
+
         <FormGroup
           controlId="formBasicText"
           validationState={this.getValidationState()}
         >
-          <ControlLabel>Desription</ControlLabel>
+          <ControlLabel>Description</ControlLabel>
           <FormControl
+            componentClass="textarea"
             id="description"
             type="text"
             value={this.state.description}
-            placeholder="Enter text"
+            placeholder="Enter Description"
             onChange={this.handleChange}
           />
           <FormControl.Feedback />
@@ -81,7 +138,7 @@ class Submission extends Component {
             id="location_name"
             type="text"
             value={this.state.location_name}
-            placeholder="Enter text"
+            placeholder="Enter Location"
             onChange={this.handleChange}
           />
           <FormControl.Feedback />
@@ -96,7 +153,7 @@ class Submission extends Component {
             id="address"
             type="text"
             value={this.state.address}
-            placeholder="Enter text"
+            placeholder="Enter Address"
             onChange={this.handleChange}
           />
           <FormControl.Feedback />
@@ -109,9 +166,9 @@ class Submission extends Component {
           <ControlLabel>Latitude</ControlLabel>
           <FormControl
             id="lat"
-            type="text"
+            type="number"
             value={this.state.lat}
-            placeholder="Enter text"
+            placeholder="Enter Number"
             onChange={this.handleChange}
           />
           <FormControl.Feedback />
@@ -124,9 +181,9 @@ class Submission extends Component {
           <ControlLabel>Longitude</ControlLabel>
           <FormControl
             id="long"
-            type="text"
+            type="number"
             value={this.state.long}
-            placeholder="Enter text"
+            placeholder="Enter Number"
             onChange={this.handleChange}
           />
           <FormControl.Feedback />
@@ -155,7 +212,7 @@ class Submission extends Component {
             id="tags"
             type="text"
             value={this.state.tags}
-            placeholder="Enter text"
+            placeholder="Seperate By Spaces"
             onChange={this.handleChange}
           />
           <FormControl.Feedback />
@@ -170,7 +227,7 @@ class Submission extends Component {
             id="collection"
             type="text"
             value={this.state.collection}
-            placeholder="Enter text"
+            placeholder="Seperate By Space"
             onChange={this.handleChange}
           />
           <FormControl.Feedback />
@@ -252,6 +309,8 @@ class Submission extends Component {
         </FormGroup>
         <button onClick={this.handleSubmit}>Submit</button>
       </form>
+    </Modal>
+  </div>
     );
   }
 }
