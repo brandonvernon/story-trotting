@@ -69,7 +69,7 @@ class NavbarHeader extends Component {
                     Filters
                   </NavItem>
                   <NavItem eventKey={1} href="#">
-                    +Add Story
+                    <Link to="/new">Add a Story</Link>
                   </NavItem>
                 </Nav>
               </Navbar>
