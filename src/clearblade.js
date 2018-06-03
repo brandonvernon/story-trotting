@@ -36,3 +36,14 @@ export const fetchPoints = (query = {}) =>
       }
     });
   });
+
+export const addPoint = (point = {}) =>
+  new Promise((resolve, reject) => {
+    return cb.Code().execute("createPOI", point, function(err, data) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    });
+  });
