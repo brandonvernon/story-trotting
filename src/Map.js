@@ -13,13 +13,13 @@ import {
 import {Link} from 'react-router-dom'
 import queryString from 'query-string'
 import getLocation from './helpers/location'
-import './Map.css'
+// import './Map.css'
 
 class MyGoogleMap extends React.PureComponent {
   state = {
     isOpen: false,
     defaultPoint: defaultPoint,
-    zoomLevel: 12 
+    zoomLevel: 12
   }
   onClick = ({selected}) => {
     this.onToggleOpen({isOpen: true})
@@ -100,7 +100,7 @@ class MyGoogleMap extends React.PureComponent {
           defaultRadius={200}
           options={{
             fillColor: '#f00',
-            fillOpacity: '0.7', 
+            fillOpacity: '0.7',
             strokeColor: '#f00',
           }}
         />
@@ -120,4 +120,3 @@ export default Map
 //    // store intervalId in the state so it can be accessed later:
 //    this.setState({intervalId: intervalId});
 // },
-
