@@ -36,6 +36,9 @@ class Detail extends Component {
           <div className="detail-modal">
             <h2>{selectedPoint.name}</h2>
             <h4>{selectedPoint.description}</h4>
+            <div>
+              <img src={selectedPoint.image_url}></img>
+            </div>
 
             <div className="stats">
               <div>
