@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Modal } from "react-bootstrap";
+import { Modal, ModalHeader } from "react-bootstrap";
 import queryString from "query-string";
 import exampleData from "./exampleData";
 import "./List.css";
@@ -29,37 +29,34 @@ class List extends Component {
   render() {
     const { location, searchData } = this.props;
     const query = queryString.parse(location.search);
+    const { id, collection, lat, long } = query;
 
     return (
       <div className="">
         <a onClick={this.handleShow}>List View</a>
         <Modal show={true} onHide={this.handleClose}>
+          <ModalHeader>
+            <h4>{collection}</h4>
+          </ModalHeader>
           <div className="">
-            <h2>Collections</h2>
-            <div className="list-link">
-              <Link
-                to={`/home?${queryString.stringify({
-                  collections: ["Willie Nelson", "Movies"]
-                })}`}
-              >
-                Movies
-              </Link>
-            </div>
-            <h2>List</h2>
             {Object.values(searchData).map(mk => {
               return (
-                <div className="list-link" key={mk.id}>
-                  <Link
-                    to={`/home?${queryString.stringify({
-                      ...query,
-                      id: mk.id,
-                      lat: mk.lat,
-                      lng: mk.long
-                    })}`}
-                  >
+                <Link
+                  key={mk.id}
+                  to={`/home?${queryString.stringify({
+                    ...query,
+                    id: mk.id,
+                    lat: mk.lat,
+                    lng: mk.long
+                  })}`}
+                >
+                  <div className="list-link">
                     {mk.name}
-                  </Link>
-                </div>
+                    <div>
+                      <small style={{ color: "grey" }}>{mk.description}</small>
+                    </div>
+                  </div>
+                </Link>
               );
             })}
           </div>
