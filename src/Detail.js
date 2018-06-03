@@ -6,7 +6,7 @@ const Detail = ({ match, location, searchData }) => {
   const { id } = queryString.parse(location.search);
   const selectedPoint = searchData[id];
   return (
-    <div>
+    <div className="container">
       <h2>{selectedPoint.name}</h2>
 
       <pre>{JSON.stringify(selectedPoint, null, 2)}</pre>
