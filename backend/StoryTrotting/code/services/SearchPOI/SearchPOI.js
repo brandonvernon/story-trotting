@@ -1,8 +1,13 @@
-DEBUG = true
 COLLECTION_NAME = "poi"
-DEBUG_PARAMS = {
-  lat:30.231044,
-  long: -97.757495,
+DEBUG = {
+  enabled:false,
+  payload:{
+    lat:30.231044,
+    long: -97.757495,
+    // collection:["Queen Elizabeth II"],
+    tags:["Miller"]
+  },
+  collectionName:"test_poi"
 }
 /**
  * @param {string} sort - default:"popular" 
@@ -15,7 +20,8 @@ DEBUG_PARAMS = {
  */
 function SearchPOI(req, resp) {
     ClearBlade.init({request:req})
-    var params = DEBUG ? DEBUG_PARAMS : req.params
+    var collectionName = DEBUG.enabled ? DEBUG.collectionName : COLLECTION_NAME
+    var params = DEBUG.enabled ? DEBUG.payload : req.params
     var lat = params.lat
     var long = params.long
     log({lat, long})
@@ -26,21 +32,26 @@ function SearchPOI(req, resp) {
       var radius = params.radius ? radius : Configuration.defaultRadiusMeters
       var rectangle = GeospatialUtil().generateGeoRectangle(params.lat, params.long, radius)
 
-      var q = ClearBlade.Query({collectionName:COLLECTION_NAME})
+      var q = ClearBlade.Query({collectionName})
                 .greaterThan( 'lat',rectangle.lat.min)
                 .lessThan(    'lat',rectangle.lat.max)
                 .greaterThan( 'long',rectangle.long.min)
                 .lessThan(    'long', rectangle.long.max)
 
+      // TODO impl multiple
       if(params.tags){
-        // loop thru tags
-        // weird OR thang
-      }
-      if(params.collections){
-        // loop thru tags
-        // weird OR thang
-      }
 
+        q.matches('tags',params.tags[0])
+        // loop thru tags
+        // weird OR thang
+      }
+      // TODO impl multiple
+      if(params.collection){
+        q.matches('collection',params.collection[0])
+        // loop thru tags
+        // weird OR thang
+      }
+      log({q})
       return q
       
     }

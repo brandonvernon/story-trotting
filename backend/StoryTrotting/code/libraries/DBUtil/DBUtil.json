@@ -1,0 +1,8 @@
+{
+    "api": "",
+    "dependencies": "Configuration",
+    "description": "",
+    "name": "DBUtil",
+    "version": 8,
+    "visibility": "system"
+}
