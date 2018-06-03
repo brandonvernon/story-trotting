@@ -1,8 +1,8 @@
-import React from 'react'
-import queryString from 'query-string'
-import {Link} from 'react-router-dom'
-import {distanceInWordsToNow, format} from 'date-fns'
-import './Detail.css'
+import React from "react";
+import queryString from "query-string";
+import { Link } from "react-router-dom";
+import { distanceInWordsToNow, format } from "date-fns";
+import "./Detail.css";
 
 const Detail = ({ match, location, searchData, searchLocalPoints }) => {
   const { id, lat, long } = queryString.parse(location.search);
@@ -13,15 +13,14 @@ const Detail = ({ match, location, searchData, searchLocalPoints }) => {
       <h2>{selectedPoint.name}</h2>
       <h4>{selectedPoint.description}</h4>
 
-<<<<<<< HEAD
       <div className="stats">
         <div>
-        <b>Collection: </b>
-        {JSON.parse(selectedPoint.collection).map(coll => (
-          <Link to={`/?${queryString.stringify({collection: coll})}`}>
-            {coll}
-          </Link>
-        ))}
+          <b>Collection: </b>
+          {JSON.parse(selectedPoint.collection).map(coll => (
+            <Link to={`/?${queryString.stringify({ collection: coll })}`}>
+              {coll}
+            </Link>
+          ))}
         </div>
         <div>
           <b>Location Name: </b> {selectedPoint.location_name}
@@ -31,10 +30,11 @@ const Detail = ({ match, location, searchData, searchLocalPoints }) => {
           {selectedPoint.address}
         </div>
         <div>
-          <b>Date: </b>{format(selectedPoint.timestamp, 'MMM DD YYYY')}
+          <b>Date: </b>
+          {format(selectedPoint.timestamp, "MMM DD YYYY")}
         </div>
         <div className="citation">
-          <b>Source: </b>{' '}
+          <b>Source: </b>{" "}
           <a target="blank" href={selectedPoint.sources}>
             {selectedPoint.sources}
           </a>
@@ -55,7 +55,7 @@ const Detail = ({ match, location, searchData, searchLocalPoints }) => {
       </div>*/}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Detail
+export default Detail;
