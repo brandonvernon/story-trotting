@@ -4,15 +4,16 @@ import {Link} from 'react-router-dom'
 import {distanceInWordsToNow, format} from 'date-fns'
 import './Detail.css'
 
-const Detail = ({match, location, searchData}) => {
-  const {id} = queryString.parse(location.search)
-  const selectedPoint = searchData[id]
-  if (!selectedPoint) return <div>Loading</div>
+const Detail = ({ match, location, searchData, searchLocalPoints }) => {
+  const { id, lat, long } = queryString.parse(location.search);
+  const selectedPoint = searchData[id];
+  if (!selectedPoint) return <div>Loading</div>;
   return (
     <div className="Detail">
       <h2>{selectedPoint.name}</h2>
       <h4>{selectedPoint.description}</h4>
 
+<<<<<<< HEAD
       <div className="stats">
         <div>
         <b>Collection: </b>

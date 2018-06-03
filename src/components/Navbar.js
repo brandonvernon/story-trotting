@@ -9,11 +9,17 @@ import {
   NavDropdown
 } from "react-bootstrap";
 import MediaQuery from "react-responsive";
+import List from "../List.js";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+import queryString from "query-string";
 
 class NavbarHeader extends Component {
   render() {
+    const query = queryString.parse(this.props.location.search);
+    const { id, collection, lat, long } = query;
+    // debugger;
     return (
       <div>
         <MediaQuery minWidth={450} maxWidth={1500}>
@@ -33,7 +39,18 @@ class NavbarHeader extends Component {
             <Navbar.Collapse className="nav-sandwich">
               <Nav>
                 <NavItem eventKey={1}>
-                  <Link to="/list">List View</Link>
+                  <Link to={`/list${this.props.location.search}`}>
+                    List View
+                  </Link>
+                </NavItem>
+              </Nav>
+              <Nav>
+                <NavItem eventKey={1}>
+                  {collection && (
+                    <span>
+                      {collection} <Link to="/">x clear</Link>
+                    </span>
+                  )}
                 </NavItem>
               </Nav>
               <Nav pullRight>
@@ -61,13 +78,13 @@ class NavbarHeader extends Component {
           <Navbar collapseOnSelect fixedBottom>
             <Nav>
               <NavItem eventKey={1}>
-                <Link to="/list">List View</Link>
+                <Link to={`/list${this.props.location.search}`}>List View</Link>
               </NavItem>
               <NavItem eventKey={1} href="#">
                 Filters
               </NavItem>
               <NavItem eventKey={1} href="#">
-                +Add Story
+                <Link to="/new">Add a Story</Link>
               </NavItem>
             </Nav>
           </Navbar>
@@ -77,4 +94,4 @@ class NavbarHeader extends Component {
   }
 }
 
-export default NavbarHeader;
+export default withRouter(NavbarHeader);

@@ -1,10 +1,6 @@
 form {
-  margin: auto;
-  width: 25%;
-}
-
-div {
-  text-align: right;
+  margin: 20px;
+  width: 90%;
 }
 
 .control-label {
