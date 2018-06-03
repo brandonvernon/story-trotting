@@ -60,11 +60,16 @@ class Routes extends React.PureComponent {
             path="/detail"
             render={props => <Detail {...shared} {...props} />}
           />
-
-          <Route
-            path="/new"
-            render={props => <Submission {...shared} {...props} />}
-          />
+          <div>
+            <Route
+              path="/new"
+              render={props => <Submission {...shared} {...props} />}
+              />
+            <Route
+              path="/new"
+              render={props => <ImageUpload {...shared} {...props} />}
+              />
+          </div>
         </div>
       </Router>
     );
