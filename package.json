@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "clearblade-js-client": "^1.0.3",
-    "query-string": "5.1.1",
+    "query-string": "^5.1.1",
     "react": "^16.4.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.0",

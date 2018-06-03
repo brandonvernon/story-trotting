@@ -1,0 +1,13 @@
+
+> story-trotting@0.1.0 build /home/david/Documents/fresh/story-trotting
+> react-scripts build
+
+Creating an optimized production build...
+Failed to compile.
+
+Failed to minify the code from this file: 
+
+ 	./node_modules/query-string/index.js:8 
+
+Read more here: http://bit.ly/2tRViJ9
+
