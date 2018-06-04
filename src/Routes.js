@@ -12,13 +12,13 @@ import "clearblade-js-client";
 /*global ClearBlade*/
 const cb = new ClearBlade();
 var initOptions = {
-  URI: "https://hackforchange.clearblade.com/",
-  messagingURI: "hackforchange.clearblade.com/",
+  URI: "https://platform.clearblade.com/",
+  messagingURI: "platform.clearblade.com/",
   messagingPort: 8904,
   useMQTT: true,
   cleanSession: true,
-  systemKey: "e0a195b10b9cedb6cceebd87d9e101",
-  systemSecret: "E0A195B10BF4E79FB3BC86F7C4E801"
+  systemKey: "cab9aab10bf6a58df1bd98c6bdc301",
+  systemSecret: "CAB9AAB10BF6A5D2D5D2BEF4B873"
 };
 
 class Routes extends React.PureComponent {
@@ -41,20 +41,11 @@ class Routes extends React.PureComponent {
     return (
       <Router>
         <div>
-          <NavbarHeader />
-
-          <Route
-            exact
-            path="/"
-            render={props => <App {...shared} {...props} />}
-          />
+          <NavbarHeader {...shared} />
+          <App {...shared} />
           <Route
             path="/list"
             render={props => <List {...shared} {...props} />}
-          />
-          <Route
-            path="/home"
-            render={props => <App {...shared} {...props} />}
           />
           <Route
             path="/detail"
@@ -64,11 +55,11 @@ class Routes extends React.PureComponent {
             <Route
               path="/new"
               render={props => <Submission {...shared} {...props} />}
-              />
+            />
             <Route
               path="/new"
               render={props => <ImageUpload {...shared} {...props} />}
-              />
+            />
           </div>
         </div>
       </Router>

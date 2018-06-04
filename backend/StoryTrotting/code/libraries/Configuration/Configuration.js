@@ -7,6 +7,7 @@
  * @property {string} name Human-readable title for the POI, ex "Something happened here"
  * @property {string} description Human-readable description for POI, can be long
  * @property {string} owner Email of user who submitted
+ * @property {Collection[]} collection Parent collection for this POI, ex belongs to 'Lyndon B Johnson' collection
  * @property {double} lat Latitude of POI, in decimals, ex -70.234234
  * @property {double} long Longitude of POI, in decimals, ex 30.8372
  * @property {blob} images (Optional) base64 blob of images, defaults is null
@@ -21,7 +22,7 @@
  * @example
  * {
  *       "address": "2313 Red River St, Austin, TX 78705",
- *       "collection": "[Lyndon B Johnson]",
+ *       "collection": "['Lyndon B Johnson']",
  *       "description": "This is also where his wife lay in repose in July of 2007",
  *       "id": "lbj-library-repose",
  *       "images": "",
@@ -43,7 +44,8 @@
  * @property {number} radius_meters Radius to search for POIs
  */
 var Configuration = {
-    defaultRadiusMeters: 100000
+    defaultRadiusMeters: 100000,
+    keysToStringify:["tags","sources","collection"]
 }
 
 

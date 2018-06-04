@@ -1,0 +1,31 @@
+.Detail {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 10px;
+  align-items: center;
+  padding: 5px;
+}
+
+.Detail > h2 {
+  margin: 0 0 10px 0;
+  padding-top: 0;
+}
+
+.detail-modal {
+  padding: 10px;
+}
+
+.stats {
+  display: flexbox;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.stats > div {
+  text-align: left;
+}
+
+.stats > .citation {
+  font-size: .67em;
+}

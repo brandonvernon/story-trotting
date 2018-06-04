@@ -5,13 +5,13 @@ const cb = new ClearBlade();
 export const init = () =>
   new Promise((resolve, reject) => {
     var initOptions = {
-      URI: "https://hackforchange.clearblade.com/",
-      messagingURI: "hackforchange.clearblade.com/",
+      URI: "https://platform.clearblade.com/",
+      messagingURI: "platform.clearblade.com/",
       messagingPort: 8904,
       useMQTT: true,
       cleanSession: true,
-      systemKey: "e0a195b10b9cedb6cceebd87d9e101",
-      systemSecret: "E0A195B10BF4E79FB3BC86F7C4E801",
+      systemKey: "cab9aab10bf6a58df1bd98c6bdc301",
+      systemSecret: "CAB9AAB10BF6A5D2D5D2BEF4B873",
       callback: (error, data) => {
         if (error) {
           reject(error);
