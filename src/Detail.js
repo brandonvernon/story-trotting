@@ -42,8 +42,6 @@ class Detail extends Component {
               <div>
                 <b>Collection:
                 </b>
-                {" "}
-                <b>Collection:</b>
                 {" "}{JSON.parse(selectedPoint.collection).map(coll => (
                   <Link
                     to={`/?${queryString.stringify({ collection: coll })}`}
