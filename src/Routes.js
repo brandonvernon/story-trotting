@@ -8,18 +8,18 @@ import { init, fetchPoints } from "./clearblade";
 import Submission from "./components/Submission";
 import ImageUpload from "./components/ImageUpload";
 
-import "clearblade-js-client";
-/*global ClearBlade*/
-const cb = new ClearBlade();
-var initOptions = {
-  URI: "https://platform.clearblade.com/",
-  messagingURI: "platform.clearblade.com/",
-  messagingPort: 8904,
-  useMQTT: true,
-  cleanSession: true,
-  systemKey: "cab9aab10bf6a58df1bd98c6bdc301",
-  systemSecret: "CAB9AAB10BF6A5D2D5D2BEF4B873"
-};
+// import "clearblade-js-client";
+// global ClearBlade
+//const cb = new ClearBlade();
+// var initOptions = {
+//   URI: "https://platform.clearblade.com/",
+//   messagingURI: "platform.clearblade.com/",
+//   messagingPort: 8904,
+//   useMQTT: true,
+//   cleanSession: true,
+//   systemKey: "cab9aab10bf6a58df1bd98c6bdc301",
+//   systemSecret: "CAB9AAB10BF6A5D2D5D2BEF4B873"
+// };
 
 class Routes extends React.PureComponent {
   state = { searchData: {} };

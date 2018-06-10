@@ -29,7 +29,7 @@ class List extends Component {
   render() {
     const { location, searchData } = this.props;
     const query = queryString.parse(location.search);
-    const { id, collection, lat, long } = query;
+    const { collection } = query;
 
     return (
       <div className="">

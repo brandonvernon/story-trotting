@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Modal, ModalHeader } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import queryString from "query-string";
 import { Link } from "react-router-dom";
 import { distanceInWordsToNow, format } from "date-fns";
@@ -27,6 +27,7 @@ class Detail extends Component {
     const { id, lat, long } = queryString.parse(location.search);
     const selectedPoint = searchData[id];
     if (!selectedPoint) return <div>Loading</div>;
+    console.log(selectedPoint)
 
     return (
       <div className="Detail">
@@ -58,11 +59,6 @@ class Detail extends Component {
                 ))}
               </div>
               <div>
-                <b>Location Name:
-                </b>
-                 {" "}{selectedPoint.location_name}
-              </div>
-              <div>
                 <b>Address:
                 </b>
                 {" "}{selectedPoint.address}
@@ -70,16 +66,6 @@ class Detail extends Component {
               <div>
                 <b>Date:
                 </b>{" "}{format(selectedPoint.timestamp, 'MMM DD YYYY')}
-                <b>Location Name:</b>
-                {" "}{selectedPoint.location_name}
-              </div>
-              <div>
-                <b>Address:</b>
-                {" "}{selectedPoint.address}
-              </div>
-              <div>
-                <b>Date:</b>
-                {" "}{format(selectedPoint.timestamp, "MMM DD YYYY")}
               </div>
               <div className="citation">
                 <b>Source:</b>{" "}
@@ -87,20 +73,6 @@ class Detail extends Component {
                   {" "}{selectedPoint.sources}
                 </a>
               </div>
-              {/*    <div>
-          <b>Owner: </b>{selectedPoint.owner}
-        </div>
-        <div>
-          tags: <b>{selectedPoint.tags}</b>
-        </div>*/}
-              {/*<div>
-        timestamp_created:{" "}
-        <b>{format(selectedPoint.timestamp_created, "MMM DD YYYY")}</b>
-      </div>
-      <div>
-        timestamp_end:{" "}
-        <b>{distanceInWordsToNow(selectedPoint.timestamp_end)}</b>
-      </div>*/}
             </div>
           </div>
         </Modal>

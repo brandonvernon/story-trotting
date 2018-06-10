@@ -35,10 +35,11 @@ class MyGoogleMap extends React.PureComponent {
   updateLocation = () => {
     getLocation()
       .then(result => {
+        console.log('Updating coords')
         this.setState({
           defaultPoint: {
             lat: result.coords.latitude,
-            long: result.coords.longitude
+            lng: result.coords.longitude
           }
         });
       })
@@ -55,15 +56,29 @@ class MyGoogleMap extends React.PureComponent {
   render() {
     const props = this.props;
     const query = queryString.parse(props.location.search);
-    const { id, collection, lat, long } = query;
-    const defaultCenter = {
-      lat: lat ? Number(lat) : this.state.defaultPoint.lat,
-      lng: long ? Number(long) : this.state.defaultPoint.long
-    };
+    const { id, lat, long } = query;
+    let defaultCenter;
+    if (this.state.defaultPoint) {
+      defaultCenter =  {
+        lat: this.state.defaultPoint.lat,
+        lng: this.state.defaultPoint.lng
+      }
+    } else if (lat && long) {
+      defaultCenter = {
+        lat: Number(lat),
+        lng: Number(long)
+      }
+    } else {
+      defaultCenter =  {
+        lat: 30.27,
+        lng: -97.68
+      }
+    }
+    console.log('devaultCenter is',defaultCenter)
     return (
       <GoogleMap
         defaultZoom={this.state.zoomLevel}
-        defaultCenter={defaultCenter}
+        center={defaultCenter}
         options={{ styles: mapStyle }}
       >
         {Object.values(this.props.searchData).map(mk => (
@@ -101,9 +116,9 @@ class MyGoogleMap extends React.PureComponent {
           center={this.state.defaultPoint}
           defaultRadius={200}
           options={{
-            fillColor: "#f00",
+            fillColor: "dodgerblue",
             fillOpacity: "0.7",
-            strokeColor: "#f00"
+            strokeColor: "dodgerblue"
           }}
         />
       </GoogleMap>

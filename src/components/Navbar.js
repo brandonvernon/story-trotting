@@ -9,7 +9,7 @@ import {
   NavDropdown
 } from "react-bootstrap";
 import MediaQuery from "react-responsive";
-import List from "../List.js";
+//import List from "../List.js";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
@@ -19,7 +19,7 @@ import './Navbar.css'
 class NavbarHeader extends Component {
   render() {
     const query = queryString.parse(this.props.location.search);
-    const { id, collection, lat, long } = query;
+    const { collection } = query;
     // debugger;
     return (
       <div>

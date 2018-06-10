@@ -1,6 +1,6 @@
 export const defaultPoint = {
   lat: 30.2297224,
-  long: -97.7560469,
+  lng: -97.7560469,
   address: "109 E 5th, Austin, TX",
   collection: '["Willie Nelson"]',
   description: "Longer desc for willi",
